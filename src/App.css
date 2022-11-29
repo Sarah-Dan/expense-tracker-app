@@ -1,38 +1,176 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@400;700&display=swap");
+
+:root {
+  --box-shadow: 0 1px 3px rgba(179, 145, 145, 0.963),
+    0 1px 2px rgba(147, 131, 131, 0.24);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  background: rgb(18, 19, 80);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(68, 6, 63, 0.3);
+  backdrop-filter: blur(10px);
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  margin: 1.8rem auto;
+  padding: 1.2rem;
+  width: 100%;
+  max-width: 350px;
+  background: rgba(93, 62, 148, 0.395);
+  box-shadow: 0 4px 30px rgba(176, 164, 164, 0.1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ .header {
+  font-size: 2rem;
+  font-weight: 300;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+h3 {
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 10px;
+  margin: 2.5rem 0 0.6rem;
+}
+
+h4 {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.inc-exp-container {
+  background-color: #fff;
+  color: black;
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  padding: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 1.2rem 0;
+}
+
+.inc-exp-container > div {
+  flex: 1;
+  text-align: center;
+}
+
+.inc-exp-container > div:first-of-type {
+  border-right: 1px solid #d7aaaa;
+}
+
+.money {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 5px 0;
+}
+
+.money.plus {
+  color: #2ecc71;
+}
+
+.money.minus {
+  color: #c0392b;
+}
+
+label {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+input[type="text"],
+input[type="number"] {
+  border: 1px solid #dedede;
+  border-radius: 2px;
+  display: block;
+  outline: none;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: #1d1543;
+  box-shadow: var(--box-shadow);
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 1rem;
+  display: block;
+  font-size: 16px;
+  margin: 1.2rem 0 1.8rem;
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.btn:hover {
+  background-color: #7c7796;
+  box-shadow: 0 1px 3px rgba(179, 145, 145, 0.963),
+    0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.btn:focus,
+.delete--btn:focus {
+  outline: 0;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.list li {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.list li.plus {
+  border-right: 5px solid #2ecc71;
+}
+
+.list li.minus {
+  border-right: 5px solid #c0392b;
+}
+
+.delete--btn {
+  cursor: pointer;
+  background-color: #e6230d;
+  border: 0;
+  color: #fff;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 2px 5px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-100%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.list li:hover .delete--btn {
+  opacity: 1;
 }
